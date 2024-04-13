@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动漫介绍</title>
+    <audio autoplay="autoplay" controls="controls" loop="true" preload="auto" src="./bgmusic/奥戸巴寿-いつも何度でも.mp3"></audio>
+    <link rel="stylesheet" href="CSS/introduce.css">
+
+</head>
+
+<body>
+    <!-- 背景图片 -->
+    <img class="bg" src="./images/背景.jpg" alt="背景图片">
+    <!-- 顶部 -->
+    <div class="header">
+        <!-- logo图标 -->
+        <div class="logo">
+            <img src="./images/logo.webp" alt="">
+        </div>
+        <!-- 导航栏-->
+        <div class="nav">
+            <ul>
+                <a href="index.html" id="nav_other">
+                    <li>首页</li>
+                </a>
+                <a href="introduce.html" id="nav_other" class="introduce">
+                    <li>动漫介绍</li>
+                </a>
+                <a href="about.html" id="nav_other" class="about">
+                    <li>关于</li>
+                </a>
+                <a href="advice.html" id="nav_other" class="advice">
+                    <li>意见反馈</li>
+                </a>
+                <a href="login.html" id="success">
+                    <li>登录/注册</li>
+                </a>
+            </ul>
+        </div>
+    </div>
+    <!-- 中间部分 -->
+    <div class="container">
+        <div class="container-top">
+            <h1>宫崎骏动漫作品概况</h1>
+            <p>一、极具东方神秘色彩，历史气息厚重，文化信息承载量较大。</p>
+            <p>二、极其精美的画面，特别是故事发生地环境，大多是一种超越了现实的纯自然状态。</p>
+            <p>三、人类的不合理就在于对于美的毫不理智的破坏。</p>
+            <p>四、对于人类善的本性的揭示，对于人类之爱，人与自然之爱的描述和刻画，让人在脱离了思考的状态下进行着思考，让我们体会着很多属于人本真应该有的道德和心灵。</p>
+            <p>五、严肃的社会主题和冷酷的现实背景，和精美的画面、温馨的感情之间形成典型的二元对立，但是整体上并不破坏作品的完美构成。</p>
+        </div>
+        <div id="ech-form"></div>
+        <div id="ech-detail">
+            <dl>
+                <dt>宫崎骏部分动漫发行时间:</dt>
+                <dd>1986-天空之城</dd>
+                <dd>1995-侧耳倾听</dd>
+                <dd>1997-幽灵公主</dd>
+                <dd>2001-千与千寻</dd>
+                <dd>2002-猫之报恩</dd>
+                <dd>2004-哈尔的移动城堡</dd>
+                <dd>2008-悬崖上的金鱼姬</dd>
+                <dd>2010-借东西的小人阿莉埃蒂</dd>
+            </dl>
+        </div>
+    </div>
+    <!-- 底部 -->
+    <div class="footer">
+        <p>如有问题请联系软件工程2101张静，联系方式（邮箱）：909074229@qq.com</p>
+    </div>
+</body>
+<script src="./JS/jquery-3.5.1.min(1).js"></script>
+<script src="./JS/echarts.js"></script>
+<script src="./JS/introduce.js"></script>
+<script>
+    $(".nav a").each(function () {
+        if ($(this)[0].href == String(window.location)) {
+            $(this).addClass("on").siblings().removeClass("on");
+        }
+    });
+    function f() {
+        var url = window.location.href;
+        var u = url.split("?");
+        //接下来使用判断语句根据url[1]的值来执行相应的JavaScript的功能
+        if (u[1] == 1) {
+            //这里写JavaScript的具体功能 
+            $("#success").attr('href', 'login.html?1');
+
+            $(".introduce").attr("href", "introduce.html?1");
+            $(".advice").attr("href", "advice.html?1");
+            $(".about").attr("href", "about.html?1");
+            $(".index").attr("href", "index.html?1");
+            $(".index").click(function () {
+                $(".index").attr("href", "index.html?1");
+            });
+            $(".introduce").click(function () {
+                $(".introduce").attr("href", "introduce.html?1");
+            });
+            $(".advice").click(function () {
+                $(".advice").attr("href", "advice.html?1");
+            });
+            $(".about").click(function () {
+                $(".about").attr("href", "about.html?1");
+            });
+        }
+    }
+    f();//默认界面开始即执行方法
+</script>
+
+</html>

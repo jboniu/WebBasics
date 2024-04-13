@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录/注册</title>
+    <audio autoplay="autoplay" controls="controls" loop="true" preload="auto" src="./bgmusic/奥戸巴寿-いつも何度でも.mp3"></audio>
+    <link rel="stylesheet" href="CSS/login.css">
+    <script src="JS/jquery-3.5.1.min(1).js"></script>
+    <style>
+        label {
+            display: inline-block;
+            width: 100px;
+            font-size: 18px;
+        }
+
+        .common {
+            width: 230px;
+            height: 30px;
+            background-color: rgba(255, 255, 255, .3);
+            /* border: 1.5px solid black; */
+        }
+    </style>
+    <script>
+        /*正则表达式中\s是空白字符串
+                   \S是非空白字符串
+                   \. 匹配除换行符的任意一个字符
+        */
+        //*******登录校验*******
+        /*校验手机号输入*/
+        function checkPhone() {
+            let reg01 = /^\d{11,}$/;
+            //获取输入框的数据
+            let phone = $("#phone").val();
+            //判断是否与正则表达式匹配
+            if (!reg01.test(phone)) {
+                //不匹配给出提示
+                $("#phone").next().html("<font color='red'><b>必须是11位手机号</b></font>");
+                return false;
+            }
+            $("#phone").next().html("<font color='green'>格式正确</font>");
+            return true;
+        }
+        /*校验密码输入*/
+        function checkPwd() {
+            //获取输入框的数据
+            let reg01 = /^\S{5,}$/;
+            let pwd = $("#pwd").val();
+            //判断是否与正则表达式匹配
+            if (!reg01.test(pwd)) {
+                //不匹配给出提示
+                $("#pwd").next().html("<font color='red'><b>必须是至少5位非空白字符组成</b></font>");
+                return false;
+            }
+            $("#pwd").next().html("<font color='green'>格式正确</font>");
+            return true;
+        }
+        // *******注册校验*******
+        /*校验手机号输入*/
+        function checkPhone1() {
+            let reg01 = /^\d{11,}$/;
+            //获取输入框的数据
+            let phone = $("#phone1").val();
+            //判断是否与正则表达式匹配
+            if (!reg01.test(phone)) {
+                //不匹配给出提示
+                $("#phone1").next().html("<font color='red'><b>必须是11位手机号</b></font>");
+                return false;
+            }
+            $("#phone1").next().html("<font color='green'>格式正确</font>");
+            return true;
+        }
+        /*校验密码输入*/
+        function checkPwd1() {
+            //获取输入框的数据
+            let reg01 = /^\S{5,}$/;
+            let pwd = $("#pwd1").val();
+            //判断是否与正则表达式匹配
+            if (!reg01.test(pwd)) {
+                //不匹配给出提示
+                $("#pwd1").next().html("<font color='red'><b>必须是至少5位非空白字符组成</b></font>");
+                return false;
+            }
+            $("#pwd1").next().html("<font color='green'>格式正确</font>");
+            return true;
+        }
+        /*校验确认密码*/
+        function checkRePwd() {
+            let pwd = $("#pwd1").val();
+            //获取输入框的数据
+            let repwd = $("#repwd").val();
+            //判断是否与正则表达式匹配
+            if (pwd != repwd) {
+                //不匹配给出提示
+                $("#repwd").next().html("<font color='red'><b>两次密码不一致</b></font>");
+                return false;
+            }
+            $("#repwd").next().html("<font color='green'>密码一致</font>");
+            return true;
+        }
+        /*校验邮箱*/
+        function checkEmail() {
+            let reg01 = /^\w{6,}@[0-9A-Za-z]{2,}\.[a-zA-Z]{2,3}$/;
+            //获取输入框的数据
+            let email = $("#email").val();
+            //判断是否与正则表达式匹配
+            if (!reg01.test(email)) {
+                //不匹配给出提示
+                $("#email").next().html("<font color='red'><b>邮箱格式错误</b></font>");
+                return false;
+            }
+            $("#email").next().html("<font color='green'>格式正确</font>");
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+    <!-- 背景图片 -->
+    <img class="bg" src="./images/背景.jpg" alt="背景图片">
+    <!-- 顶部 -->
+    <div class="header">
+        <!-- logo图标 -->
+        <div class="logo">
+            <img src="./images/logo.webp" alt="">
+        </div>
+        <!-- 导航栏-->
+        <!-- style="display: none;" -->
+        <div class="nav">
+            <ul>
+                <a href="index.html" id="nav_other" class="index">
+                    <li>首页</li>
+                </a>
+                <a href="introduce.html" id="nav_other" class="introduce">
+                    <li>动漫介绍</li>
+                </a>
+                <a href="about.html" id="nav_other" class="about">
+                    <li>关于</li>
+                </a>
+                <a href="advice.html" id="nav_other" class="advice">
+                    <li>意见反馈</li>
+                </a>
+                <a href="login.html" id="success">
+                    <li>登录/注册</li>
+                </a>
+            </ul>
+        </div>
+    </div>
+    <!-- 中间部分 -->
+    <div class="container">
+        <!-- 注册框 -->
+        <form name="f2" id="register_form" style="width: 800px; height: 480px; display: none;">
+            <!-- 注册logo -->
+            <div class="login-logo">
+                <img src="./images/注册登录.png" alt="" width="50" height="50"><span>注册</span>
+            </div>
+            <!-- 手机号 -->
+            <div class="form-son">
+                <label for="phone1">手机号：</label><input id="phone1" type="text" name="phone1" class="common"
+                    onblur="checkPhone1()">
+                <div style="display: inline-block;"></div>
+            </div>
+
+            <!-- 密码 -->
+            <div class="form-son">
+                <label for="pwd1">密码：</label><input id="pwd1" type="password" name="pwd1" class="common"
+                    onblur="checkPwd1()">
+                <div style="display: inline-block;"></div>
+            </div>
+            <!-- 确认密码 -->
+            <div class="form-son">
+                <label for="repwd">确认密码：</label><input id="repwd" type="password" name="repwd" class="common"
+                    onblur="checkRePwd()">
+                <div style="display: inline-block;"></div>
+            </div class="form-son">
+            <!-- 电子邮箱 -->
+            <div class="form-son">
+                <label for="email">电子邮箱：</label><input id="email" type="text" name="email" class="common"
+                    onblur="checkEmail()">
+                <div style="display: inline-block;"></div>
+            </div>
+            <div class="button">
+                <button class="rbtn" id="rbtn">注册</button>
+            </div>
+        </form>
+        <!-- 登录框 -->
+
+        <form name="f1" id="login_form" target="the_iframe" style="display: block;">
+            <!-- 登录logo -->
+            <div class="login-logo">
+                <img src="./images/注册登录.png" alt="" width="50" height="50"><span>登录</span>
+            </div>
+            <!-- 手机号 -->
+            <div class="form-son">
+                <label for="phone">手机号：</label><input id="phone" type="text" name="phone" class="common"
+                    onblur="checkPhone()">
+                <div style="display: inline-block;"></div>
+            </div>
+            <!-- 密码 -->
+            <div class="form-son">
+                <label for="pwd">密码：</label><input id="pwd" type="password" name="pwd" class="common"
+                    onblur="checkPwd()">
+                <div style="display: inline-block;"></div>
+            </div>
+            <div class="button">
+                <button class="lbtn" id="lbtn" name="the_iframe">登录</button>
+                <p>没有账号？请<a id="register_btn" href="javascript:" style="color:red;">注册</a></p>
+            </div>
+        </form>
+
+        <iframe id="is_iframe" name="the_iframe" style="display:none;"></iframe>
+        <!-- 已登录框 -->
+
+        <form name="f1" id="afterlogin_form" style="display: none;">
+            <!-- 已登录logo -->
+            <div class="afterlogin-logo">
+                <img src="./images/已登录.png" alt="" width="100" height="100"><span>已登录</span>
+            </div>
+            <!-- 退出登录 -->
+            <div class="button" id="out_btn">
+                <a href="javascript:" style="width: 80px; height: 30px;
+                    line-height: 30px; text-decoration: none; text-align: center; margin-left: 370px; margin-top: 50px;  border-radius: 25px;
+                     background-color: rgba(255, 255, 255, 0.8); color:rgb(26, 24, 24);">退出登录</a>
+            </div>
+        </form>
+
+        <!-- </div> -->
+
+    </div>
+    <!-- 底部 -->
+    <div class="footer">
+        <p>如有问题请联系软件工程2101张静，联系方式（邮箱）：909074229@qq.com</p>
+    </div>
+    <script src="JS/jquery-3.5.1.min(1).js"></script>
+    <script>
+        $(".nav a").each(function () {
+            if ($(this)[0].href == String(window.location)) {
+                $(this).addClass("on").siblings().removeClass("on");
+            }
+        });
+
+
+        //跳转注册页面
+        $("#register_btn").click(function () {
+            $("#login_form").css("display", "none");
+            $("#register_form").css("display", "block");
+        })
+        //注册页面
+        $(function () {
+
+            $("#rbtn").click(function () {
+                var login = document.getElementById("login_form");
+                var register = document.getElementById("register_form");
+                var phone = $("#phone1").val();
+                var pwd = $("#pwd1").val();
+                if (phone == "" || pwd == "" || (phone == "" && pwd == "")) {
+
+                    confirm("亲，还没完成注册哦！");
+                    return false;
+                    login.style.display = "none";
+                    register.style.display = "block";
+                } else {
+                    window.sessionStorage.setItem("phone", phone);
+                    window.sessionStorage.setItem("pwd", pwd);
+                    confirm("注册成功！");
+                }
+
+            });
+        })
+
+        //登录
+        $("#lbtn").click(function () {
+            var phone = window.sessionStorage.getItem("phone");
+            var pwd = window.sessionStorage.getItem("pwd");
+
+            var signPhone = $("#phone").val();
+            var signPwd = $("#pwd").val();
+
+            if (phone == signPhone && pwd == signPwd) {
+                $("#out_btn").css('display', 'none')
+                $("#afterlogin_form").css('display', 'block');
+                $("#login_form").css('display', 'none');
+                $("#register_form").css('display', 'none');
+
+                setTimeout(function () {
+                    confirm("您已成功登陆!");
+
+                    window.location.href = "index.html?1";
+                }, 1000);
+                // return false;
+
+            } else if (phone == signPhone && pwd !== signPwd) {
+                confirm("您的密码有误！");
+                window.location.href = "login.html";
+            } else if (phone !== signPhone && pwd == signPwd) {
+                confirm("您的用户名有误！");
+                window.location.href = "login.html";
+            } else if (signPhone == "" && signPwd == "") {
+                confirm("亲，还没输入哦！");
+                window.location.href = "login.html";
+            } else {
+                confirm("您的用户名密码都有误！");
+                window.location.href = "login.html";
+            }
+        });
+        // 已登录返回登录页面显示已登录
+        function f() {
+            var url = window.location.href;
+            var u = url.split("?");
+            //接下来使用判断语句根据url[1]的值来执行相应的JavaScript的功能
+            if (u[1] == 1) {
+                //这里写JavaScript的具体功能 
+                $("#afterlogin_form").css('display', 'block');
+                $("#login_form").css('display', 'none');
+                $(".index").attr("href", "index.html?1");
+                $("#success").attr('href', 'login.html?1');
+                $(".index").click(function () {
+                    $(".index").attr("href", "index.html?1");
+                });
+                $(".introduce").click(function () {
+                    $(".introduce").attr("href", "introduce.html?1");
+                });
+                $(".advice").click(function () {
+                    $(".advice").attr("href", "advice.html?1");
+                });
+                $(".about").click(function () {
+                    $(".about").attr("href", "about.html?1");
+                });
+            }
+        }
+        f();//默认界面开始即执行方法
+        //退出登录
+        $("#out_btn").click(function () {
+            alert("退出成功！");
+            $("#afterlogin_form").css('display', 'none');
+            $("#login_form").css('display', 'block');
+            window.location.href = "index.html";
+            // $("#success").attr('href', 'login.html');
+        })
+        //未登录
+        if ($("#success").attr("href") == "login.html") {
+            $(".introduce").attr("href", "#");
+            $(".advice").attr("href", "#");
+            $(".about").attr("href", "#");
+            $(".introduce").click(function () {
+                alert("亲，请先登录~")
+            })
+            $(".advice").click(function () {
+                alert("亲，请先登录~")
+            })
+            $(".about").click(function () {
+                alert("亲，请先登录~")
+            })
+        }
+        if ($("#success").attr("href") == "login.html?1") {
+            $(".introduce").attr("href", "introduce.html");
+            $(".advice").attr("href", "advice.html");
+            $(".about").attr("href", "about.html");
+        }
+    </script>
+</body>
+
+</html>

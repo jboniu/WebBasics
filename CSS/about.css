@@ -1,0 +1,130 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+audio {
+    display: none;
+}
+
+.bg {
+
+    position: fixed;
+    /*将图片固定，不随页面滚动*/
+    opacity: 0.8;
+    /*修改透明度*/
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    /*将图片放在最底层*/
+}
+
+audio {
+    display: none;
+}
+
+.header {
+    display: flex;
+    flex-flow: row nowrap;
+    height: 60px;
+    width: 100%;
+
+}
+
+.header .logo img {
+    display: inline-block;
+    width: 100px;
+    height: 61px;
+}
+
+.nav ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.nav ul li {
+    width: 150px;
+    height: 60px;
+    list-style-type: none;
+    text-align: center;
+    line-height: 60px;
+    /* border: 1px solid blue; */
+    border-left: 0px;
+    /* border-radius: 15px; */
+    transition: background 0.5s linear;
+}
+
+.nav ul li:hover {
+    background-color: rgb(178, 203, 137);
+}
+
+.nav ul a {
+    font-size: 22px;
+    font-family: "微软雅黑";
+    text-decoration: none;
+    color: rgb(55, 53, 53);
+}
+
+.header .nav ul .on {
+    background-color: rgb(178, 203, 137);
+}
+
+.container {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.container .bigtitle {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 70%;
+    height: 100px;
+    margin: 0 auto;
+}
+
+.container .bigtitle span {
+    font-size: 55px;
+}
+
+.container .bigtitle p {
+    font-size: 20px;
+    color: rgb(50, 53, 65);
+}
+
+.container .about {
+    display: flex;
+    flex-flow: row nowrap;
+    /* margin-top: 15px;
+    margin-left: 300px; */
+    margin: 0 auto;
+    height: 80px;
+    width: 70%;
+}
+
+.container .about h1 {
+    line-height: 80px;
+}
+
+.container .about img {
+    height: 80px;
+    width: 100px;
+    opacity: 0.8;
+}
+
+.container .videoBox {
+    width: 1200px;
+    height: 600px;
+    margin: 0 auto;
+}
+
+.footer {
+    padding: 20px;
+}
+
+.footer p {
+    text-align: center;
+    font-size: 15px;
+    font-style: italic;
+}

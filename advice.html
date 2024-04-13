@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>意见反馈</title>
+    <audio autoplay="autoplay" controls="controls" loop="true" preload="auto" src="./bgmusic/奥戸巴寿-いつも何度でも.mp3"></audio>
+    <link rel="stylesheet" href="CSS/advice.css">
+</head>
+
+<body>
+    <!-- 背景图片 -->
+    <img class="bg" src="./images/背景.jpg" alt="背景图片">
+    <!-- 顶部 -->
+    <div class="header">
+        <!-- logo图标 -->
+        <div class="logo">
+            <img src="./images/logo.webp" alt="">
+        </div>
+        <!-- 导航栏-->
+        <div class="nav">
+            <ul>
+                <a href="index.html" id="nav_other">
+                    <li>首页</li>
+                </a>
+                <a href="introduce.html" id="nav_other" class="introduce">
+                    <li>动漫介绍</li>
+                </a>
+                <a href="about.html" id="nav_other" class="about">
+                    <li>关于</li>
+                </a>
+                <a href="advice.html" id="nav_other" class="advice">
+                    <li>意见反馈</li>
+                </a>
+                <a href="login.html" id="success">
+                    <li>登录/注册</li>
+                </a>
+            </ul>
+        </div>
+    </div>
+    <!-- 中间部分 -->
+    <div class="container">
+        <div id="div0" class="">
+            <div id="div1" class="">
+                <table width="100%">
+                    <tr>
+                        <td class="bt1">意见反馈</td>
+                    </tr>
+                </table>
+            </div>
+            <div id="div2" class="">
+                <form method="post" action="" name="f">
+                    <table width="650px" align="center">
+                        <tr>
+                            <td align="left" style="color:red">反馈征集</td>
+                        </tr>
+                    </table>
+                    <table align="center" border="1" bordercolor="white" width="650px" height="400px" cellspacing="0px"
+                        cellpadding="0px">
+                        <tr>
+                            <td class="td1">用户名：</td>
+                            <td><input type="text" name="name" size="10"></td>
+                        </tr>
+                        <tr>
+                            <td class="td1" bordercolor="red">电子邮件:</td>
+                            <td><input type="text" name="email" size="50"></td>
+                        </tr>
+                        <tr>
+                            <td class="td1">分&nbsp;&nbsp;&nbsp;&nbsp;类:</td>
+                            <td style="color:red;font-weight:bold">
+                                <input type="radio" name="bm">不保密
+                                <input type="radio" name="bm">保密
+                                &nbsp;&nbsp;&nbsp;&nbsp;意见类型：
+                                <select name="leixing">
+                                    <option value="0" selected></option>
+                                    <option value="1">投诉</option>
+                                    <option value="2">咨询</option>
+                                    <option value="3">建议</option>
+                                    <option value="4">反馈</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td1">意&nbsp;&nbsp;&nbsp;&nbsp;见:</td>
+                            <td><textarea name="" rows="4" cols="60"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <p>注：如果您的留言不便公开，请选择"保密"选项，提交后可凭系统反馈给您的留言编号、查询密码和您的手机号查询回复。 </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="center">
+                                <input class="Btn" type="submit" value="提交" onclick="submitBtn()">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <input type="reset" value="清空">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <ul>
+                                    <li>请遵守国家有关法律、法规，尊重网上道德，承担一切因您的行为而直接或间接引起的法律责任。</li>
+                                    <li>本网站拥有管理笔名和留言的一切权利。</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部 -->
+    <div class="footer">
+        <p>如有问题请联系软件工程2101张静，联系方式（邮箱）：909074229@qq.com</p>
+    </div>
+    <script src="JS/jquery-3.5.1.min(1).js"></script>
+    <script>
+        $(".nav a").each(function () {
+            if ($(this)[0].href == String(window.location)) {
+                $(this).addClass("on").siblings().removeClass("on");
+            }
+        });
+        function submitBtn() {
+            alert("提交成功！");
+            window.document.f.action = "index.html";
+            window.document.f.submit();
+        }
+        function f() {
+            var url = window.location.href;
+            var u = url.split("?");
+            //接下来使用判断语句根据url[1]的值来执行相应的JavaScript的功能
+            if (u[1] == 1) {
+                //这里写JavaScript的具体功能 
+                $("#success").attr('href', 'login.html?1');
+                $(".introduce").attr("href", "introduce.html?1");
+                $(".advice").attr("href", "advice.html?1");
+                $(".about").attr("href", "about.html?1");
+                $(".index").attr("href", "index.html?1");
+                $(".index").click(function () {
+                    $(".index").attr("href", "index.html?1");
+                });
+                $(".introduce").click(function () {
+                    $(".introduce").attr("href", "introduce.html?1");
+                });
+                $(".advice").click(function () {
+                    $(".advice").attr("href", "advice.html?1");
+                });
+                $(".about").click(function () {
+                    $(".about").attr("href", "about.html?1");
+                });
+            }
+        }
+        f();//默认界面开始即执行方法
+        //未登录
+        if ($("#success").attr("href") == "login.html?1") {
+            $(".introduce").attr("href", "introduce.html");
+            $(".advice").attr("href", "advice.html");
+            $(".about").attr("href", "about.html");
+        }
+        if ($("#success").attr("href") == "login.html") {
+            $(".introduce").attr("href", "#");
+            $(".advice").attr("href", "#");
+            $(".about").attr("href", "#");
+            $(".introduce").click(function () {
+                alert("亲，请先登录~")
+            })
+            $(".advice").click(function () {
+                alert("亲，请先登录~")
+            })
+            $(".about").click(function () {
+                alert("亲，请先登录~")
+            })
+        }
+
+
+
+
+
+    </script>
+</body>
+
+</html>

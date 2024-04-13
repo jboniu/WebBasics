@@ -1,0 +1,134 @@
+* {
+    padding: 0;
+    margin: 0;
+
+}
+
+.bg {
+
+    position: fixed;
+    /*将图片固定，不随页面滚动*/
+    opacity: 0.8;
+    /*修改透明度*/
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    /*将图片放在最底层*/
+}
+
+audio {
+    display: none;
+}
+
+.header {
+    display: flex;
+    flex-flow: row nowrap;
+    height: 60px;
+    width: 100%;
+
+}
+
+.header .logo img {
+    display: inline-block;
+    width: 100px;
+    height: 61px;
+}
+
+.nav ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.nav ul li {
+    width: 150px;
+    height: 60px;
+    list-style-type: none;
+    text-align: center;
+    line-height: 60px;
+    /* border: 1px solid blue; */
+    border-left: 0px;
+    /* border-radius: 15px; */
+    transition: background 0.5s linear;
+}
+
+.nav ul li:hover {
+    background-color: rgb(178, 203, 137);
+}
+
+.nav ul a {
+    font-size: 22px;
+    font-family: "微软雅黑";
+    text-decoration: none;
+    color: rgb(55, 53, 53);
+}
+
+
+.header .nav ul .on {
+    background-color: rgb(178, 203, 137);
+}
+
+.swiper {
+    width: 60%;
+    height: 800px;
+    text-align: center;
+}
+
+.swiper img {
+    width: 80%;
+    height: 800px;
+}
+
+.cartoonList {
+    width: 1500px;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+
+.cartoonList .cartoon {
+    width: 300px;
+    height: auto;
+    margin: 10px;
+    /* border: 4px solid rgba(255, 255, 255, 0); */
+}
+
+.cartoonList .cartoon .imgs {
+    width: 300px;
+    height: 400px;
+}
+
+.cartoonList .cartoon .details span {
+    font-weight: 700;
+    font-family: "微软雅黑";
+    font-size: 25px;
+    color: rgb(46, 45, 45);
+}
+
+.cartoonList .cartoon .details p {
+    text-indent: 2em;
+    font-style: inherit;
+    line-height: 25px;
+    font-size: 20px;
+    font-family: "宋体";
+    font-weight: 700;
+}
+
+.cartoonList .cartoon .details b {
+    color: red;
+    font-size: 22px;
+    font-style: italic;
+}
+
+.footer {
+    padding: 20px;
+}
+
+.footer p {
+    text-align: center;
+    font-size: 15px;
+    font-style: italic;
+}

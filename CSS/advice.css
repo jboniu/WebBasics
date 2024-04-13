@@ -1,0 +1,147 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+audio {
+    display: none;
+}
+
+.bg {
+
+    position: fixed;
+    /*将图片固定，不随页面滚动*/
+    opacity: 0.8;
+    /*修改透明度*/
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    /*将图片放在最底层*/
+}
+
+audio {
+    display: none;
+}
+
+.header {
+    display: flex;
+    flex-flow: row nowrap;
+    height: 60px;
+    width: 100%;
+
+}
+
+.header .logo img {
+    display: inline-block;
+    width: 100px;
+    height: 61px;
+}
+
+.nav ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.nav ul li {
+    width: 150px;
+    height: 60px;
+    list-style-type: none;
+    text-align: center;
+    line-height: 60px;
+    /* border: 1px solid blue; */
+    border-left: 0px;
+    /* border-radius: 15px; */
+    transition: background 0.5s linear;
+}
+
+.nav ul li:hover {
+    background-color: rgb(178, 203, 137);
+}
+
+.nav ul a {
+    font-size: 22px;
+    font-family: "微软雅黑";
+    text-decoration: none;
+    color: rgb(55, 53, 53);
+}
+
+.header .nav ul .on {
+    background-color: rgb(178, 203, 137);
+}
+
+.container {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-size: 12px;
+    margin-top: 100px;
+    /* background-color: red; */
+}
+
+.container table {
+    margin-left: 100px;
+
+}
+
+.container table li {
+    list-style-type: none;
+}
+
+#div0 {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 50%;
+    background-color: rgba(9, 9, 12, 0.6);
+}
+
+/*第1图层样式*/
+#div1 {
+    /* background: #f2f9fd; */
+    color: white;
+    width: 100%;
+    height: 50px;
+}
+
+/*第2图层样式*/
+#div2 {
+    /* background: #f2f9fd; */
+    color: white;
+    width: 100%;
+    height: 450px;
+    border-top: 3px solid rgba(37, 40, 79, .5);
+    /* margin-top: 3px; */
+}
+
+/*单元格1样式*/
+.td1 {
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 22px;
+    color: #339966;
+    width: 100px;
+    text-align: center;
+}
+
+/*标题1样式*/
+.bt1 {
+    font: bold 26px 黑体;
+    width: 500px;
+    text-align: left;
+    color: white;
+    border-color: red;
+}
+
+.footer {
+    padding: 20px;
+    margin-top: 285px;
+}
+
+.footer p {
+    text-align: center;
+    font-size: 15px;
+    font-style: italic;
+}

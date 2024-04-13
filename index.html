@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>宫老爷子の奇幻世界</title>
+    <audio autoplay="autoplay" controls="controls" loop="true" preload="auto" src="./bgmusic/奥戸巴寿-いつも何度でも.mp3"></audio>
+    <link rel="stylesheet" href="./CSS/index.css">
+    <link rel="stylesheet" href="./CSS/swiper-bundle.min.css">
+    <script src="./JS/swiper-bundle.min.js"></script>
+</head>
+
+<body>
+    <!-- 背景图片 -->
+    <img class="bg" src="./images/背景.jpg" alt="背景图片">
+    <!-- 头部 -->
+    <div class="header">
+        <!-- logo图标 -->
+        <div class="logo">
+            <img src="./images/logo.webp" alt="">
+        </div>
+        <!-- 导航栏-->
+        <div class="nav">
+            <ul>
+                <a href="index.html" id="nav_other">
+                    <li>首页</li>
+                </a>
+                <a href="introduce.html" id="nav_other" class="introduce">
+                    <li>动漫介绍</li>
+                </a>
+                <a href="about.html" id="nav_other" class="about">
+                    <li>关于</li>
+                </a>
+                <a href="advice.html" id="nav_other" class="advice">
+                    <li>意见反馈</li>
+                </a>
+                <a href="login.html" id="success">
+                    <li>登录/注册</li>
+                </a>
+            </ul>
+        </div>
+    </div>
+    <!-- 轮播图 -->
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="./images/千与千寻.jpg" name="picture"></div>
+            <div class="swiper-slide"><img src="./images/天空之城.webp" name="picture"></div>
+            <div class="swiper-slide"><img src="./images/魔女宅急便.webp" name="picture"></div>
+            <div class="swiper-slide"><img src="./images/风之谷.png" name="picture"></div>
+            <div class="swiper-slide"><img src="./images/起风了.jpeg" name="picture"></div>
+            <div class="swiper-slide"><img src="./images/悬崖上的金鱼姬.jpg" name="picture"></div>
+            <div class="swiper-slide"><img src="./images/幽灵公主.jpeg" name="picture"></div>
+            <div class="swiper-slide"><img src="./images/哈尔的移动城堡.webp" name="picture"></div>
+        </div>
+
+        <!-- 如果需要导航按钮 -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
+    </div>
+    <!-- 主内容区域(动漫列表) -->
+    <div class="container">
+
+        <div class="cartoonList-top" style="width: 1500px; height: 30px;   font-weight: 600; ">
+            <a href="javascript:" id="cartoonList_btn" style="text-decoration: none;"><span
+                    style="padding-left: 180px;font-size: 30px;color: rgb(60, 63, 65); ">动漫列表</span></a>
+            <a href="javascript:" id="record_btn" style="text-decoration: none;"><span
+                    style="float: right; padding-left: 100px;margin-top: 15px; color: red;">我的播放记录</span></a>
+        </div>
+        <div class="cartoonList">
+            <div class="cartoon">
+                <div class="imgs"><img src="./images/千与千寻.jpg" style="width: 300px; height: 400px;" alt=""></div>
+                <!-- 详情 -->
+                <div class="details">
+                    <span class="name">《千与千寻》</span>
+                    <p>豆瓣评分<b>9.3</b>，104万人评价：有些路必须自己走。</p>
+                </div>
+                <input class="btn" type="button" value="播放" style="width: 150px; margin-left: 80px;" />
+            </div>
+            <div class=" cartoon">
+                <div class="imgs"><img style="width: 300px; height: 400px;" src="./images/借东西的小人阿莉埃蒂.jfif" alt=""></div>
+
+                <!-- 详情 -->
+                <div class="details">
+                    <span class="name">《借东西的小人阿莉埃蒂》</span>
+                    <p>豆瓣评分<b>8.9</b>，在小小世界中相互治愈...</p>
+                </div>
+                <input class="btn" type="button" value="播放" style="width: 150px; margin-left: 80px;" />
+            </div>
+            <div class="cartoon">
+                <div class="imgs"><img style="width: 300px; height: 400px;" src="./images/侧耳倾听.webp" alt=""></div>
+
+                <!-- 详情 -->
+                <div class="details">
+                    <span class="name">《侧耳倾听》</span>
+                    <p>豆瓣评分<b>8.9</b>，唯美青春的背后，是古老工艺的传承。</p>
+                </div>
+                <input class="btn" type="button" value="播放" style="width: 150px; margin-left: 80px;" />
+            </div>
+            <div class="cartoon">
+                <div class="imgs"><img style="width: 300px; height: 400px;" src="./images/哈尔的移动城堡.webp" alt=""></div>
+
+                <!-- 详情 -->
+                <div class="details">
+                    <span class="name">《哈尔的移动城堡》</span>
+                    <p>豆瓣评分<b>9.1</b>，从苏菲的成长来看，见微之处俱是真知。</p>
+                </div>
+                <input class="btn" type="button" value="播放" style="width: 150px; margin-left: 80px;" />
+            </div>
+            <div class="cartoon">
+                <div class="imgs"><img style="width: 300px; height: 400px;" src="./images/天空之城.webp" alt=""></div>
+
+                <!-- 详情 -->
+                <div class="details">
+                    <span class="name">《天空之城》</span>
+                    <p>豆瓣评分<b>9.1</b>，对天空的追逐永不停止。</p>
+                </div>
+                <input class="btn" type="button" value="播放" style="width: 150px; margin-left: 80px;" />
+            </div>
+            <div class="cartoon">
+                <div class="imgs"><img style="width: 300px; height: 400px;" src="./images/幽灵公主.jpeg" alt=""></div>
+
+                <!-- 详情 -->
+                <div class="details">
+                    <span class="name">《幽灵公主》</span>
+                    <p>豆瓣评分<b>8.9</b>，自然是永恒的，人类才是后来者。</p>
+                </div>
+                <input class="btn" type="button" value="播放" style="width: 150px; margin-left: 80px;" />
+            </div>
+            <div class="cartoon">
+                <div class="imgs"><img style="width: 300px; height: 400px;" src="./images/悬崖上的金鱼姬.jpg" alt=""></div>
+
+                <!-- 详情 -->
+                <div class="details">
+                    <span class="name">《悬崖上的金鱼姬》</span>
+                    <p>豆瓣评分<b>8.5</b>，世界上有一种魔法，那就是爱。</p>
+                </div>
+                <input class="btn" type="button" value="播放" style="width: 150px; margin-left: 80px;" />
+            </div>
+            <div class="cartoon">
+                <div class="imgs"><img style="width: 300px; height: 400px;" src="./images/猫之报恩.jpg" alt=""></div>
+
+                <!-- 详情 -->
+                <div class="details">
+                    <span class="name">《猫之报恩》</span>
+                    <p>豆瓣评分<b>8.2</b>，勇敢做真实的自己，不要因为外界改变自己。</p>
+                </div>
+                <input class="btn" type="button" value="播放" style="width: 150px; margin-left: 80px;" />
+            </div>
+        </div>
+        <div class="record" style="display:none;  width: 1500px;">
+            <div class="record_row">
+                <table width="900" border="1" cellspacing="0" id="TB" style="margin-left: 410px;">
+
+                    <tr>
+                        <th width="300">片名</th>
+                        <th width="400">海报</th>
+                        <th>操作</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- 底部 -->
+    <div class="footer">
+        <p>如有问题请联系软件工程2101张静，联系方式（邮箱）：909074229@qq.com</p>
+    </div>
+    <script src="JS/jquery-3.5.1.min(1).js"></script>
+    <script>
+        var mySwiper = new Swiper('.swiper', {
+            direction: 'horizontal', // 垂直切换选项
+            loop: true, // 循环模式选项
+
+            // 如果需要前进后退按钮
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            speed: 2000,
+            autoplay: {
+                disableOnInteraction: false,
+                delay: 1500
+            },
+
+        });
+        //当前导航栏高亮
+        $(".nav a").each(function () {
+            if ($(this)[0].href == (String(window.location))) {
+                $(this).addClass("on").siblings().removeClass("on");
+            }
+        });
+        //鼠标经过
+        let cartoons = document.getElementsByClassName("cartoon");
+        for (index in cartoons) {
+            let cartoon = cartoons.item(index);
+            cartoon.onmouseover = function () {
+                this.style.boxShadow = "10px 20px 30px #888888"
+            }
+            cartoon.onmouseout = function () {
+                this.style.boxShadow = "";
+            }
+        }
+
+        //点击播放记录
+        $("#record_btn").click(function () {
+
+            $(".cartoonList").css("display", "none");
+            $(".record").css("display", "block");
+        });
+        //点击返回列表
+        $("#cartoonList_btn").click(function () {
+            $(".cartoonList").css("display", "flex");
+            $(".record").css("display", "none");
+        });
+        //播放记录
+        var obtn = document.getElementsByClassName("btn");
+        var otble = document.getElementById("TB");
+        var imgs = document.getElementsByClassName("imgs");
+        var oname = document.getElementsByClassName("name");
+
+        for (var i = 0; i < obtn.length; i++) {
+            obtn[i].index = i;
+            obtn[i].onclick = function () {
+                alert("正在跳转...");
+                // 当前 图片 名字 
+                var onames = oname[this.index].innerHTML;
+                var oimg = imgs[this.index].innerHTML;
+                var otbody = otble.children[0];
+
+                // 创建 tr
+                var tr = document.createElement('tr');
+                //在tr里面拼接代码
+                tr.innerHTML = '<th>' + onames + '</th>' + '<th>' + oimg + '</th>' + '<th><span class="sc">删除</span></th>';
+                //添加tr
+                otbody.appendChild(tr);
+
+                //功能	
+                // 获取tr
+                var tr1 = document.getElementsByTagName('tr');
+                for (var i = 0; i < tr1.length; i++) {
+                    tr1[i].index = i;
+                    tr1[i].onclick = function (e) {
+                        var e = e || window.event;
+                        // target 返回点击目标  this 当前对象
+                        var el = e.target || e.srcElement;
+                        //获取点击class
+                        var cls = el.className;
+                        if (cls == "sc") {
+                            var conf = confirm('确定删除此记录吗？');
+                            if (conf) {
+                                this.parentNode.removeChild(this);
+                            }
+                        }
+                    }
+
+                }
+
+
+            }
+        }
+
+        function f() {
+            var url = window.location.href;
+            var u = url.split("?");
+            //接下来使用判断语句根据url[1]的值来执行相应的JavaScript的功能
+            if (u[1] == 1) {
+                //这里写JavaScript的具体功能 
+                $("#success").attr('href', 'login.html?1');
+                $(".introduce").attr("href", "introduce.html?1");
+                $(".advice").attr("href", "advice.html?1");
+                $(".about").attr("href", "about.html?1");
+                $(".index").attr("href", "index.html?1");
+                $(".index").click(function () {
+                    $(".index").attr("href", "index.html?1");
+                });
+                $(".introduce").click(function () {
+                    $(".introduce").attr("href", "introduce.html?1");
+                });
+                $(".advice").click(function () {
+                    $(".advice").attr("href", "advice.html?1");
+                });
+                $(".about").click(function () {
+                    $(".about").attr("href", "about.html?1");
+                });
+            }
+        }
+        f();//默认界面开始即执行方法
+        //未登录无法进入其他页面
+        if ($("#success").attr("href") == "login.html") {
+            $(".introduce").attr("href", "#");
+            $(".advice").attr("href", "#");
+            $(".about").attr("href", "#");
+            $(".introduce").click(function () {
+                alert("亲，请先登录~")
+            })
+            $(".advice").click(function () {
+                alert("亲，请先登录~")
+            })
+            $(".about").click(function () {
+                alert("亲，请先登录~")
+            })
+        }
+        if ($("#success").attr("href") == "login.html?1") {
+            $(".introduce").attr("href", "introduce.html");
+            $(".advice").attr("href", "advice.html");
+            $(".about").attr("href", "about.html");
+        }
+
+    </script>
+</body>
+
+</html>
